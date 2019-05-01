@@ -25,7 +25,7 @@ let ruleset = [0, 0, 0, 1, 1, 1, 1, 0];
 
 // })
 
-// console.log(val1)
+
 
 function setup() {
   createCanvas(800, 400);
