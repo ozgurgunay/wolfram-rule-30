@@ -1,0 +1,28 @@
+.ruleset-container {
+    top: 15%;
+    left: 70%;
+    background: #eee;
+    text-transform: uppercase;
+    width: 400px;
+    position: absolute;
+    box-sizing: border-box;
+    display: block; 
+}
+
+.ruleset-container button {
+    margin: 70px 0 0 0;
+}
+
+.button-container {
+    display: inline;
+    position: absolute;
+    padding: 8px;
+    background: rgb(192, 89, 89);
+}
+
+.button-container input {
+    width: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
