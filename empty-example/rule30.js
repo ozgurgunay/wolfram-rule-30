@@ -1,8 +1,8 @@
 let resolution = 10;
-//an array of 0s and 1s-0 ve 1 lerden olusan dizi
+//an array of 0s and 1s-0 ve 1 array consisting
 let cells;
 
-//we arbitrarily start with just the middle cell having a state of-kendi istegimize göre orta hücreden baslıyoruz.
+//we arbitrarily start with just the middle cell having a state of
 let generation = 0;
 
 //an array to store the ruleset, for example {0,0,0,1,1,1,1,0}(rule 30)-
@@ -52,28 +52,26 @@ function draw() {
   }
 }
 
-//the process of creating the new generation-yeni nesilin yaratılma süreci
+//the process of creating the new generation
 function generate() {
-  //first we create an empty array for the new values-önce yeni degerler icin bos bir dizi olusturduk
+  //first we create an empty array for the new values
   let nextgen = Array(cells.length);
-  //for every spot, determine new state by examing current state, and neighbor state-
-  //her hücre icin mevcut durumunu ve komsuların durumunu inceleyip yeni durumunu belirleriz
-  //ignore edges that only have one neighbor-yalnızca bir komsusu olanları yani kenarları görmezden gel
+  //for every spot, determine new state by examing current state, and neighbor state
+  //ignore edges that only have one neighbor
   for (let i = 1; i < cells.length-1; i++) {
-    let left = cells[i-1];    //left neighbor state -sol komsunun durumu
-    let me   = cells[i];      //current state - suan ki durum
-    let right = cells[i+1];   //right neighbor state - sag komsunun durumu
-    nextgen[i] = rules(left, me, right);  //compute next generation - gelecek nesli hesapla
+    let left = cells[i-1];    //left neighbor state
+    let me   = cells[i];      //current state
+    let right = cells[i+1];   //right neighbor state
+    nextgen[i] = rules(left, me, right);  //compute next generation
   }
-  //the current generation is the new generation - simdiki yeni nesil
+  //the current generation is the new generation
   cells = nextgen;
   generation++;
 
 }
 
 //implementing the Wolfram rules
-//could be improved and made more concise, but here we can explicitly-gelistirilip daha özgün hale getirilebilir 
-//burada acıkca yazdık wolfram kurallarını 
+//could be improved and made more concise, but here we can explicitly
 function rules(a, b, c) {
   if (a == 1 && b == 1 && c == 1) return ruleset[0];
   if (a == 1 && b == 1 && c == 0) return ruleset[1];
